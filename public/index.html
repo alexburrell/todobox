@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+    <head>
+        <title>ToDoBox</title>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/dropbox.js/0.10.2/dropbox.min.js"></script>
+        <script src="mustache.js"></script>
+        <script src="todobox.js"></script>
+
+        <link href="http://fonts.googleapis.com/css?family=Kalam" rel="stylesheet" type="text/css" />
+        <link href="todobox.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>My To Do List</h1>
+            <div id="list-container"></div>
+        </div>
+
+        <script type="text/mustache" id="Lists">
+        {{#lists}}
+        <div class="heading">
+            <h2 class="inline">{{title}}</h2>
+            <p class="inline length">{{length}}</p>
+        </div>
+        <ul class="list">
+            {{#items}}
+            <li  class="list-item{{#completed}} completed{{/completed}}">{{text}}</li>
+            {{/items}}
+        </ul>
+        {{/lists}}
+        </script>
+    </body>
+</html>
